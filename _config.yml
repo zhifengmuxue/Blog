@@ -104,4 +104,3 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/zhifengmuxue/Blog.git
-  branch: master
