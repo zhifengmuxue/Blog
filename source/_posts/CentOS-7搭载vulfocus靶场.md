@@ -1,7 +1,7 @@
 ---
 title: CentOS 7搭载vulfocus靶场
 date: 2023-02-07 22:47:33
-tags:
+tags: 指南
 ---
 
 ### 一、挂载镜像
