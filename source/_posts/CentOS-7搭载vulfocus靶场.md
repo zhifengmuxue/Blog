@@ -1,16 +1,21 @@
 ---
 title: CentOS 7搭载vulfocus靶场
 date: 2023-02-07 22:47:33
-tags: 指南
+tags: [指南,vulfocus]
+categories: 指南
 ---
+
+ 在CentOS 7 虚拟机上搭载vulfocus靶场
+
+后续使用doker ps -a; docker start {id};开启靶场
+
+<!-- more -->
 
 ### 一、挂载镜像
 
 ​			mkdir /mnt/cdrom  创建挂载点
 
 ​			mount  /dev/cdrom  /mnt/cdrom	挂载
-
-<!-- more -->
 
 ### 二、配yum源
 
