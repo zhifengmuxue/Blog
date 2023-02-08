@@ -86,7 +86,7 @@ crypto:
 
 # Search
 search:
-    enable: false
+    enable: ture
 
 # Gitalk
 # https://github.com/gitalk/gitalk

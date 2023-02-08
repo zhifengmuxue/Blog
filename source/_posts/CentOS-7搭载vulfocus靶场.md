@@ -10,6 +10,8 @@ tags:
 
 ​			mount  /dev/cdrom  /mnt/cdrom	挂载
 
+<!-- more -->
+
 ### 二、配yum源
 
 ​			cd  /etc/yum.repos.d/
