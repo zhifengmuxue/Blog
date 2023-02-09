@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
-        <title>CentOS 7搭载vulfocus靶场 | zfmx&#39;s Blog</title>
+        <title>关于 | zfmx&#39;s Blog</title>
         <meta name="author" content="zfmx">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -128,79 +128,21 @@
 
                 <div class="article">
     <div>
-        <h1>CentOS 7搭载vulfocus靶场 </h1>
+        <h1>关于 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/2/7
+            2023/2/8
         </span>
         
-        <span class="category">
-            <a href="/categories/%E6%8C%87%E5%8D%97/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                指南
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E6%8C%87%E5%8D%97/" style="color: #ffa2c4">指南</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/vulfocus/" style="color: #ff7d73">vulfocus</a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p> 在CentOS 7 虚拟机上搭载vulfocus靶场</p>
-<p>后续使用doker ps -a; docker start {id};开启靶场</p>
-<span id="more"></span>
-
-<h3 id="一、挂载镜像"><a href="#一、挂载镜像" class="headerlink" title="一、挂载镜像"></a>一、挂载镜像</h3><p>​			mkdir &#x2F;mnt&#x2F;cdrom  创建挂载点</p>
-<p>​			mount  &#x2F;dev&#x2F;cdrom  &#x2F;mnt&#x2F;cdrom	挂载</p>
-<h3 id="二、配yum源"><a href="#二、配yum源" class="headerlink" title="二、配yum源"></a>二、配yum源</h3><p>​			cd  &#x2F;etc&#x2F;yum.repos.d&#x2F;</p>
-<p>​			vim CentOS-Media.repo</p>
-<pre><code>[c7-media]
-name=CentOS-$releasever - Media
-baseurl=file://mnt/cdrom
-gpgcheck=0
-enabled=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-</code></pre>
-<h3 id="三、docker安装"><a href="#三、docker安装" class="headerlink" title="三、docker安装"></a>三、docker安装</h3><pre><code>curl -sSL https://get.daocloud.io/docker | sh
-</code></pre>
-<p>启动：systemctl start docker</p>
-<p>卸载：yum remove docker-ce删除安装包</p>
-<p>​			rm -rf &#x2F;var&#x2F;lib&#x2F;docker删除镜像等</p>
-<h3 id="四、部署vulfocus环境"><a href="#四、部署vulfocus环境" class="headerlink" title="四、部署vulfocus环境"></a>四、部署vulfocus环境</h3><p>拉取镜像：docker pull vulfocus&#x2F;vulfocus:latest</p>
-<p>查看库：docker images (取得IMAGE ID)</p>
-<pre><code>docker run -d -p 映射端口:80 -v /var/run/docker.sock:/var/run/docker.sock -e VUL_IP=(CentOS主机IP) (IMAGE ID)
-</code></pre>
-<p>对于我：</p>
-<pre><code>docker run -d -p 8081:80 -v /var/run/docker.sock:/var/run/docker.sock -e VUL_IP=10.0.0.128 8e55f85571c8
-</code></pre>
-<p>用浏览器访问地址的映射端口</p>
-<p>admin&#x2F;admin</p>
-<h3 id="五、开启"><a href="#五、开启" class="headerlink" title="五、开启"></a>五、开启</h3><p>systemctl start docker 开启docker</p>
-<p>docker ps -a 查看创建容器</p>
-<p>找到对应的ID后，docker start id</p>
-
+        
     </div>
     
     
