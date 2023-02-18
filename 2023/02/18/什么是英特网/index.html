@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
-        <title>hackthebox 0:FTP redis SMB telnet | zfmx&#39;s Blog</title>
+        <title>什么是英特网 | zfmx&#39;s Blog</title>
         <meta name="author" content="zfmx">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -128,22 +128,22 @@
 
                 <div class="article">
     <div>
-        <h1>hackthebox 0:FTP redis SMB telnet </h1>
+        <h1>什么是英特网 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/2/16
+            2023/2/18
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%B8%97%E9%80%8F%E7%AC%94%E8%AE%B0/">
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                渗透笔记
+                计算机网络学习笔记
             </a>
         </span>
         
@@ -155,27 +155,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/redis/" style="color: #ffa2c4">redis</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/hackthebox/" style="color: #00a596">hackthebox</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/FTP/" style="color: #03a9f4">FTP</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/SMB/" style="color: #00a596">SMB</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/telnet/" style="color: #00bcd4">telnet</a>
+                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="color: #03a9f4">计算机网络</a>
             </span>
             
         </span>
@@ -183,57 +163,30 @@
     </div>
     
     <div class="content" v-pre>
-        <p> 关于hackthebox上起点0的总结  ICMP Nmap ftp redis smb telnet 等</p>
+        <h3 id="我们可以通过以下两种方式描述英特网："><a href="#我们可以通过以下两种方式描述英特网：" class="headerlink" title="我们可以通过以下两种方式描述英特网："></a><strong>我们可以通过以下两种方式描述英特网：</strong></h3><p>1.构成英特网的基本硬件和软件组件，即具体构成描述</p>
+<p>2.根据为分布式应用特工服务的联网基础设施，即服务描述</p>
 <span id="more"></span>
 
-<h3 id="一、ICMP"><a href="#一、ICMP" class="headerlink" title="一、ICMP"></a>一、ICMP</h3><p>使用ping工具检测目标存活情况</p>
-<pre><code>ping &#123;ip&#125;
-</code></pre>
-<h3 id="二、nmap端口扫描"><a href="#二、nmap端口扫描" class="headerlink" title="二、nmap端口扫描"></a>二、nmap端口扫描</h3><p>-sV 扫描服务版本 </p>
-<p>-p 指定端口</p>
-<p>-sC 默认副本扫描</p>
-<pre><code>nmap -sV -p 1-65535 -sC &#123;ip&#125;
-</code></pre>
-<h3 id="三、telnet"><a href="#三、telnet" class="headerlink" title="三、telnet"></a>三、telnet</h3><p>Telnet协议是TCP&#x2F;IP协议族中的一员，是Internet远程登录服务的标准协议和主要方式。它为用户提供了在本地计算机上完成远程主机工作的能力。在终端使用者的电脑上使用telnet程序，用它连接到服务器。终端使用者可以在telnet程序中输入命令，这些命令会在服务器上运行，就像直接在服务器的控制台上输入一样。可以在本地就能控制服务器。要开始一个telnet会话，必须输入用户名和密码来登录服务器。Telnet是常用的远程控制Web服务器的方法。</p>
-<p>在kali中使用以下代码连接：</p>
-<pre><code>telnet &#123;ip&#125;
-</code></pre>
-<p>连接后需要登入</p>
-<p>我们可以猜测用户名，进行暴力破解：</p>
-<p>​				一般用户名：admin\administrator\root</p>
-<p>​				密码可以先尝试空白登入</p>
-<h3 id="四、smbclient"><a href="#四、smbclient" class="headerlink" title="四、smbclient"></a>四、smbclient</h3><p>SMB(全称是Server Message Block)，被用于Web连接和客户端与服务器之间的信息沟通</p>
-<p>一般运行服务于445号端口，用于在计算机间共享文件、打印机、串口等</p>
-<p>SMB工作过程：版本协商	会话请求凭据	文件路径凭据	对共享资源进行操作</p>
-<p><strong>使用工具 smbclient</strong>,尝试连接到远程主机并检查是否需要任何身份验证。如果不指定特定的用户名，就将使用攻击机的用户名登入。</p>
-<p><strong>首先查看用户列表</strong></p>
-<pre><code>smbclient -L &#123;ip&#125;
-</code></pre>
-<p>ADMIN$：administrative share 是由 Windows NT 系列创建的隐藏网络共享，允许系统管理员远程访问<br>网络连接系统。这些共享可能不会被永久删除，但可能会被禁用</p>
-<p>C$：共享c盘内容，这是对系统进行操作的位置</p>
-<p>IPC$：进程间通信共享。用于管理进程，并且不是文件系统的一部分</p>
-<p>WorkShares：访客</p>
-<p>其中带$符号标识的都拥有管理员权限</p>
-<p><strong>尝试登入</strong></p>
-<pre><code>smbclient \\\\ip\\&#123;sharename&#125;
-</code></pre>
-<h3 id="五、redis-cli"><a href="#五、redis-cli" class="headerlink" title="五、redis-cli"></a>五、redis-cli</h3><p>redis（Remote Dictionary Server )，即远程字典服务，是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。</p>
-<p>像 Redis 这样的内存数据库通常用于缓存经常请求快速的数据检索。对于具有大量流量的站点，此配置允许更快地检索，大多数请求，同时在主数据库中仍具有稳定的长期存储</p>
-<p><strong>使用工具 redis-cli</strong></p>
-<p>连接代码：</p>
-<pre><code>redis-cli -h &#123;ip&#125;
-</code></pre>
-<p><strong>info</strong> 查看详细</p>
-<p><strong>info keyspace</strong> 可以查看key空间 每一个数据库中的keys数量会显示出来</p>
-<p><strong>select</strong> 选择数据库 </p>
-<p>keys *  列出所有key</p>
-<h3 id="六、ftp"><a href="#六、ftp" class="headerlink" title="六、ftp"></a>六、ftp</h3><p>ftp有三种用户：real、guest、anonymous</p>
-<p><strong>real</strong> :指在FTP服务上拥有帐号,当这类用户登录FTP服务器的时候，其默认的主目录就是其帐号命名的目录。但是，其还可以变更到其他目录中去.</p>
-<p><strong>guest</strong>:只能够访问自己的主目录</p>
-<p><strong>anonymous</strong>:匿名访问。这类用户是指在FTP服务器中没有指定帐户，但是其仍然可以进行匿名访问某些公开的资源。</p>
-<pre><code>ftp &#123;ip&#125;
-Name(): 用户
-</code></pre>
+<h3 id="一、具体构成描述"><a href="#一、具体构成描述" class="headerlink" title="一、具体构成描述"></a>一、具体构成描述</h3><p>​	所有连接到英特网的设备都被成为主机(host)或 <strong>端系统</strong>(end system)</p>
+<p>​	端系统通过<strong>通信链路</strong> communication link 和 <strong>分组交换机</strong> packet switch 的网络连接到一起</p>
+<p><strong>通信链路</strong> ：由不同类型的物理媒介组成。不同的链路能够以不同的速率传输数据</p>
+<p><strong>分组交换机</strong>：从一条入通信链路接受到达的<strong>分组</strong> packet ，并从另一条出通信链路转发该分组</p>
+<p><strong>分组</strong> :一台端系统向另一台端系统发送数据时，发送端系统将数据分段，并为每段加上首部字节</p>
+<p>​	分组交换机有两种常见的类型：<strong>路由器</strong> router 和 <strong>链路交换机</strong> link-layer switch ,链路交换机通常应用于接入网中，而路由器通常用于网络核心中。</p>
+<p>​	从发送端系统到接收端系统，一个分组所经历的一系列通信链路和分组交换机称为通过该网络的 <strong>路径</strong> path或route</p>
+<img src="/2023/02/18/%E4%BB%80%E4%B9%88%E6%98%AF%E8%8B%B1%E7%89%B9%E7%BD%91/1.png" alt="1" style="zoom:60%;">
+
+<p><strong>英特网服务商</strong> Internet Service Provider, ISP：端系统通过ISP接入英特网，较低层的ISP通过国家的、国际的较高层的ISP互连起来，每一个ISP网络都是独立管理的，运行着IP协议，尊从一定的命名和地址规则。</p>
+<p><strong>协议 protocol</strong>：控制英特网中的信息的接受和发送</p>
+<h3 id="二、服务描述"><a href="#二、服务描述" class="headerlink" title="二、服务描述"></a>二、服务描述</h3><p>​		运行在端系统上的各种应用因为涉及多个相互交换数据的端系统，故被称为<strong>分布式应用</strong> distributed application，英特网应用运行在端系统上，即它们并不运行在网络核心中的分组交换机上。那么运行在一个端系统上的应用“指挥”英特网向运行在另一个端系统上的软件传送数据呢？这就用到了 <strong>套接字接口</strong> socket interface</p>
+<p>​		该接口规定了运行在一个端系统上的程序请求英特网基础设施向运行在另一个端系统上的特定目的地程序交付数据的方式</p>
+<h3 id="三、什么是协议"><a href="#三、什么是协议" class="headerlink" title="三、什么是协议"></a>三、什么是协议</h3><p>报文的交换以及发送和接收这些报文时所采取的操作时定义一个协议的关键元素		</p>
+<p>​		<strong>协议</strong> 定义了在两个或多个通信实体之间交换的报文的格式和顺序，以及报文的发送&#x2F;接收或其他事件所采取的操作</p>
+<p>例如，在两台物理机上连接的计算机中，硬件实现的协议控制了在两块网络接口卡间的比特流</p>
+<p>​			在端系统中，拥塞控制协议控制了在发送方和接收方之间传输的分组发送的速率</p>
+<p>​			路由器中的协议决定了分组从源到目的地的路径</p>
+<p>如下的tcp协议，就是协议的一种</p>
+<img src="/2023/02/18/%E4%BB%80%E4%B9%88%E6%98%AF%E8%8B%B1%E7%89%B9%E7%BD%91/v2-e0d749b68780b060b094d3c163f9fb5b_r.jpg" alt="v2-e0d749b68780b060b094d3c163f9fb5b_r" style="zoom:50%;">
 
     </div>
     
