@@ -150,8 +150,8 @@
             
 
 <div class="post">
-    <a href="/2023/02/18/%E4%BB%80%E4%B9%88%E6%98%AF%E8%8B%B1%E7%89%B9%E7%BD%91/">
-        <h2 class="post-title">什么是英特网</h2>
+    <a href="/2023/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E8%8B%B1%E7%89%B9%E7%BD%91/">
+        <h2 class="post-title">计算机网络和因特网</h2>
     </a>
     <div class="category-and-date">
         
@@ -176,8 +176,80 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h3 id="我们可以通过以下两种方式描述英特网："><a href="#我们可以通过以下两种方式描述英特网：" class="headerlink" title="我们可以通过以下两种方式描述英特网："></a><strong>我们可以通过以下两种方式描述英特网：</strong></h3><p>1.构成英特网的基本硬件和软件组件，即具体构成描述</p>
+            <span id="more"></span>
+
+<h2 id="一、描述因特网："><a href="#一、描述因特网：" class="headerlink" title="一、描述因特网："></a><strong>一、描述因特网：</strong></h2><p>1.构成因特网的基本硬件和软件组件，即具体构成描述</p>
 <p>2.根据为分布式应用特工服务的联网基础设施，即服务描述</p>
+<h3 id="具体构成描述"><a href="#具体构成描述" class="headerlink" title="具体构成描述"></a>具体构成描述</h3><p>​	所有连接到因特网的设备都被成为主机(host)或 <strong>端系统</strong>(end system)</p>
+<p>​	端系统通过<strong>通信链路</strong> communication link 和 <strong>分组交换机</strong> packet switch 的网络连接到一起</p>
+<p><strong>通信链路</strong> ：   由不同类型的物理媒介组成。不同的链路能够以不同的速率传输数据</p>
+<p><strong>分组交换机</strong>：	从一条入通信链路接受到达的<strong>分组</strong> packet ，并从另一条出通信链路转发该分组</p>
+<p><strong>分组</strong> :		一台端系统向另一台端系统发送数据时，发送端系统将数据分段，并为每段加上首部字节</p>
+<p>​	分组交换机有两种常见的类型：<strong>路由器</strong> router 和 <strong>链路交换机</strong> link-layer switch ,链路交换机通常应用于接入网中，而路由器通常用于网络核心中。</p>
+<p>​	从发送端系统到接收端系统，一个分组所经历的一系列通信链路和分组交换机称为通过该网络的 <strong>路径</strong> path或route</p>
+<img src="/2023/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E8%8B%B1%E7%89%B9%E7%BD%91/1.png" alt="1" style="zoom:60%;">
+
+<p><strong>因特网服务商</strong> Internet Service Provider, ISP：端系统通过ISP接入因特网，较低层的ISP通过国家的、国际的较高层的ISP互连起来，每一个ISP网络都是独立管理的，运行着IP协议，尊从一定的命名和地址规则。</p>
+<p><strong>协议 protocol</strong>：控制因特网中的信息的接受和发送</p>
+<br>
+
+<h3 id="服务描述"><a href="#服务描述" class="headerlink" title="服务描述"></a>服务描述</h3><p>​		运行在端系统上的各种应用因为涉及多个相互交换数据的端系统，故被称为<strong>分布式应用</strong> distributed application，因特网应用运行在端系统上，即它们并不运行在网络核心中的分组交换机上。那么运行在一个端系统上的应用“指挥”因特网向运行在另一个端系统上的软件传送数据呢？这就用到了 <strong>套接字接口</strong> socket interface</p>
+<p>​		该接口规定了运行在一个端系统上的程序请求因特网基础设施向运行在另一个端系统上的特定目的地程序交付数据的方式</p>
+<br>
+
+<h3 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议"></a>什么是协议</h3><p>报文的交换以及发送和接收这些报文时所采取的操作时定义一个协议的关键元素		</p>
+<p>​		<strong>协议</strong> 定义了在两个或多个通信实体之间交换的报文的格式和顺序，以及报文的发送&#x2F;接收或其他事件所采取的操作</p>
+<p>例如，在两台物理机上连接的计算机中，硬件实现的协议控制了在两块网络接口卡间的比特流</p>
+<p>​			在端系统中，拥塞控制协议控制了在发送方和接收方之间传输的分组发送的速率</p>
+<p>​			路由器中的协议决定了分组从源到目的地的路径</p>
+<br>
+
+<br>
+
+<br>
+
+<h2 id="二、网络边缘"><a href="#二、网络边缘" class="headerlink" title="二、网络边缘"></a>二、网络边缘</h2><p>​		端系统处于网络边缘，端系统包括 <strong>桌面计算机</strong>(桌面PC，Max，linux设备等)、<strong>服务器</strong>(web和电子邮件服务器等)、<strong>移动计算机</strong>(便携机、智能手机和平板电脑)</p>
+<h3 id="接入网"><a href="#接入网" class="headerlink" title="接入网"></a>接入网</h3><p>​		<strong>接入网：</strong>将端系统物理连接到其**边缘路由器 **edge route 的网络，边缘路由器是端系统到任何其他远程端系统的路径上的第一台路由器。如图中粗直线相连接的就是边缘路由</p>
+<p>​		<img src="/2023/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E8%8B%B1%E7%89%B9%E7%BD%91/image-20230218164026044.png" alt="image-20230218164026044" style="zoom:33%;"></p>
+<p>下文介绍接入网的三种环境（家庭、公司、广域移动无线）</p>
+<br>
+
+<h4 id="家庭接入：DSL、电缆、FTTH和5G固定式无线"><a href="#家庭接入：DSL、电缆、FTTH和5G固定式无线" class="headerlink" title="家庭接入：DSL、电缆、FTTH和5G固定式无线"></a>家庭接入：DSL、电缆、FTTH和5G固定式无线</h4><p>​		<strong>DSL数字用户线</strong> Digital Subscriber Line ,DSL :通常是从通过本地电话接入的本地电话公司处获得的DSL因特网接入，在使用时，本地电话公司也是他的ISP</p>
+<p>​		每个用户的DSL调制解调器使用现有的电话线于位于电话公司的本地中心局( CO )中的数字用户线接入复用器（DSLAM）交换数据，用户的解调器将得到的数字数据转化为高频音，通过电话线传输给中心局，在DSLAM处被转换回数字形式</p>
+<img src="/2023/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E8%8B%B1%E7%89%B9%E7%BD%91/image-20230218164926500.png" alt="image-20230218164926500" style="zoom: 25%;">
+
+<p>分频器将到达家庭的数据信号和电话信号分隔开，并将数据型号转发给DSL调制，同时，中心局的DSLAM把数据信号和电话信号分隔开，并将数据送往因特网。</p>
+<p>​		DSL标准定义了多个传输速率，包括24 Mbps和52 Mbps的下行传输速率，以及3.5 Mbps和16 Mbps的上行传输速率，最新的标准规定了有关 1 Gbps 的总计上行加下行速率，由于上行和下行速率是不同的，这种接入被称为不对称的</p>
+<p>​		<strong>电缆因特网接入</strong> cable Internet access :从提供有线电视的公司获得电缆因特网接入，光缆将电缆头段连接到地区枢纽，通过传统的同轴电缆到达各个家庭和各个公寓，一般每个地区枢纽支持500~5000个家庭，因为此过程中即用到了光纤又用到了同轴电缆，它常被称为 <strong>混合光纤同轴 Hybrid Fiber Coax,HFC系统</strong></p>
+<img src="/2023/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E8%8B%B1%E7%89%B9%E7%BD%91/image-20230218170711425.png" alt="image-20230218170711425" style="zoom:25%;">
+
+<p>​		电缆因特网接入需要特殊的调制解调器，<strong>电缆调制解调器</strong> cable modem，同时在电缆头端应用<strong>电缆调制解调器端接系统</strong> Cable Modem Termination System,CMTS 这与DSL网络中的DSLAM具有类似的功能，电缆调制解调器将HFC网络划分为下行和上行两个信道，一般下行高于上行速率，DOCSIS2.0和3.0的标准分别定义了 40 Mbps 和 1.2 Gbps 的下行速率和 30 Mbps和 100 Mbps的上行速率</p>
+<p>​		电缆因特网的一个重要特征是共享广播媒体，根据此接入的特点，如果几个用户同时经下行信道下载东西，每个用户的实际速率将大大降低，因为都是共享的所以需要一个分布式多路访问协议来协调传输和避免碰撞</p>
+<p>​		<strong>FTTH光纤到户</strong> Fiber To The Home,FTTH ：提供了一条从本地中心局直接到家庭的光纤路径，FTTH能够提供大约每秒千兆比特的因特网接入速率</p>
+<p>​		最简单的光纤分布网络称为直接光纤，从本地中心局到每户设置一根光纤。而更为一般的是，从中心局出来的没跟光纤实际上由许多家庭共享，接近后在进行分配，此时的分配有两种光纤分布体系结构：有源光纤网络（Active Optical Network, AON）和无源光纤网络 PON，AON本质上就是交换以太网,而PON则如下图所示</p>
+<p>​	<img src="/2023/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E8%8B%B1%E7%89%B9%E7%BD%91/image-20230218173431363.png" alt="image-20230218173431363" style="zoom:25%;"></p>
+<p>每个家庭有一个<strong>光纤网络端接器</strong>Optical Network Terminator,ONT ，它由专门的光纤连接到分配器，分配器连接到一根共享光纤，在连接到 光纤线路端接器 Optical Line Terminator,OLT ，而在家庭中，用户将一台家庭路由器与ONT相连，然后接入因特网</p>
+<p>​		<strong>5G固定式无线</strong> ：使用波束成形技术，数据以无线方式从供应商的基站发送到家中的调制解调器，一个无线路由器与该调制解调器相连</p>
+<br>
+
+<h4 id="企业（家庭）接入：以太网和WiFi"><a href="#企业（家庭）接入：以太网和WiFi" class="headerlink" title="企业（家庭）接入：以太网和WiFi"></a>企业（家庭）接入：以太网和WiFi</h4><p>​		<strong>以太网</strong> 以太网是到目前为止公司、大学和家庭网络中最为流行的接入技术，以太网是通过双绞铜线与一台以太网交换机相连，用户通常以100 Mbps 或几十Gbps 的速率接入以太网交换机</p>
+<img src="/2023/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E8%8B%B1%E7%89%B9%E7%BD%91/image-20230218175440316.png" alt="image-20230218175440316" style="zoom:25%;">
+
+<p>​		<strong>WiFi</strong> 无线LAN用户通常必须位于距离接入点几十米的范围内，从接入点与企业网相连。基于IEEE802.11技术的无线LAN接入</p>
+<p>​		而如今成为了家庭网络中常见的部件，将宽带住宅接入与廉价的无线局域网技术结合，组成强大的家庭网络</p>
+<img src="/2023/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E8%8B%B1%E7%89%B9%E7%BD%91/image-20230218192838615.png" alt="image-20230218192838615" style="zoom:25%;">
+
+<br>
+
+<h4 id="广域无线接入：3G、LTE4G和5G"><a href="#广域无线接入：3G、LTE4G和5G" class="headerlink" title="广域无线接入：3G、LTE4G和5G"></a>广域无线接入：3G、LTE4G和5G</h4><br>
+
+<h3 id="物理媒介"><a href="#物理媒介" class="headerlink" title="物理媒介"></a>物理媒介</h3><p>​		物理媒介分成两种类型：<strong>导引型媒介</strong> guided media （沿着固体媒介前行）和 <strong>非导引型媒介</strong> （在空气或外层空间中传播）unguided media </p>
+<h4 id="1-双绞铜线"><a href="#1-双绞铜线" class="headerlink" title="1.双绞铜线"></a>1.双绞铜线</h4><p>​		最便宜、最耐用的导引型媒介，由两根绝缘的铜线组成，以规则的螺旋状排列。通常血多双绞线捆扎在一起形成一根电缆，并在这些双绞线外面覆盖上保护性防护层</p>
+<h4 id="2-同轴电缆"><a href="#2-同轴电缆" class="headerlink" title="2.同轴电缆"></a>2.同轴电缆</h4><p>​		由两根铜导体组成，但两根导体是同心的而不是并行的，借助这种结构以及特殊的绝缘体和保护层，同轴电缆能够达到较高的数据传输速度。同轴电缆能被用作导引型共享媒介</p>
+<h4 id="3-光纤"><a href="#3-光纤" class="headerlink" title="3.光纤"></a>3.光纤</h4><p>​		光纤是一种细而柔软的能够导引光脉冲的媒介，其中的每个脉冲表示一个比特。不受电磁干扰，衰减极低，并且很难窃听。光载波（Optical Carrier,OC）</p>
+<h4 id="4-陆地无线电信道"><a href="#4-陆地无线电信道" class="headerlink" title="4.陆地无线电信道"></a>4.陆地无线电信道</h4><p>​		有穿透墙壁、提供与移动用户的连接以及长距离承载信号的能力，因而成为一种有吸引力的媒介，无线电信道的特性极大依赖于传播环境和信号传输的距离。分为三类：一类运行在很短的距离，另一类运行在局域数十到几百米，第三类运行在广域，数万米，</p>
+<h4 id="5-卫星无线电信道"><a href="#5-卫星无线电信道" class="headerlink" title="5.卫星无线电信道"></a>5.卫星无线电信道</h4><p>​		</p>
+
             
         </div>
     </div>
@@ -190,13 +262,13 @@
         
         <span class="tag">
             
-            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="color: #00a596">
-                计算机网络
+            <a href="/tags/%E5%9B%A0%E7%89%B9%E7%BD%91/" style="color: #03a9f4">
+                因特网
             </a>
         </span>
         
     </div>
-    <a href="/2023/02/18/%E4%BB%80%E4%B9%88%E6%98%AF%E8%8B%B1%E7%89%B9%E7%BD%91/" class="go-post">阅读全文</a>
+    <a href="/2023/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E8%8B%B1%E7%89%B9%E7%BD%91/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -240,21 +312,21 @@
         
         <span class="tag">
             
-            <a href="/tags/CVE%E6%BC%8F%E6%B4%9E/" style="color: #00a596">
+            <a href="/tags/CVE%E6%BC%8F%E6%B4%9E/" style="color: #03a9f4">
                 CVE漏洞
             </a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/O2OA/" style="color: #00bcd4">
+            <a href="/tags/O2OA/" style="color: #00a596">
                 O2OA
             </a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #00bcd4">
+            <a href="/tags/RCE/" style="color: #03a9f4">
                 RCE
             </a>
         </span>
@@ -303,7 +375,7 @@
         
         <span class="tag">
             
-            <a href="/tags/redis/" style="color: #ff7d73">
+            <a href="/tags/redis/" style="color: #00a596">
                 redis
             </a>
         </span>
@@ -317,21 +389,21 @@
         
         <span class="tag">
             
-            <a href="/tags/FTP/" style="color: #03a9f4">
+            <a href="/tags/FTP/" style="color: #ff7d73">
                 FTP
             </a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/SMB/" style="color: #03a9f4">
+            <a href="/tags/SMB/" style="color: #ff7d73">
                 SMB
             </a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/telnet/" style="color: #00a596">
+            <a href="/tags/telnet/" style="color: #03a9f4">
                 telnet
             </a>
         </span>
@@ -388,14 +460,14 @@
         
         <span class="tag">
             
-            <a href="/tags/webmin/" style="color: #ff7d73">
+            <a href="/tags/webmin/" style="color: #00bcd4">
                 webmin
             </a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/shell/" style="color: #ff7d73">
+            <a href="/tags/shell/" style="color: #00bcd4">
                 shell
             </a>
         </span>
@@ -446,7 +518,7 @@
         
         <span class="tag">
             
-            <a href="/tags/CVE%E6%BC%8F%E6%B4%9E%EF%BC%8C%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="color: #00a596">
+            <a href="/tags/CVE%E6%BC%8F%E6%B4%9E%EF%BC%8C%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="color: #ffa2c4">
                 CVE漏洞，弱口令
             </a>
         </span>
@@ -506,7 +578,7 @@
         
         <span class="tag">
             
-            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #00a596">
+            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #ff7d73">
                 SQL注入
             </a>
         </span>
@@ -556,7 +628,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%B0%8F%E7%99%BD%E5%85%A5%E9%97%A8/" style="color: #00a596">
+            <a href="/tags/%E5%B0%8F%E7%99%BD%E5%85%A5%E9%97%A8/" style="color: #ff7d73">
                 小白入门
             </a>
         </span>
@@ -612,14 +684,14 @@
         
         <span class="tag">
             
-            <a href="/tags/CVE%E6%BC%8F%E6%B4%9E/" style="color: #ffa2c4">
+            <a href="/tags/CVE%E6%BC%8F%E6%B4%9E/" style="color: #ff7d73">
                 CVE漏洞
             </a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" style="color: #03a9f4">
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" style="color: #ff7d73">
                 文件上传漏洞
             </a>
         </span>
@@ -672,14 +744,14 @@
         
         <span class="tag">
             
-            <a href="/tags/CVE%E6%BC%8F%E6%B4%9E/" style="color: #03a9f4">
+            <a href="/tags/CVE%E6%BC%8F%E6%B4%9E/" style="color: #00bcd4">
                 CVE漏洞
             </a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/redis/" style="color: #00a596">
+            <a href="/tags/redis/" style="color: #03a9f4">
                 redis
             </a>
         </span>
@@ -729,14 +801,14 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%8C%87%E5%8D%97/" style="color: #00bcd4">
+            <a href="/tags/%E6%8C%87%E5%8D%97/" style="color: #ff7d73">
                 指南
             </a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/vulfocus/" style="color: #00bcd4">
+            <a href="/tags/vulfocus/" style="color: #ff7d73">
                 vulfocus
             </a>
         </span>
