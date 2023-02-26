@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>nisp一级复习：第二章 | zfmx&#39;s Blog</title>
+        <meta name="author" content="zfmx">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <link rel="icon" href="/images/1.jpg">
+        <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.2.1/css/all.min.css">
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        
+        
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height: 100vh; width: 100vw; left: 0; top: 0; position: fixed; display: flex; z-index: 2147483647; background: #fff; transition: opacity 0.3s ease-out; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; pointer-events: none">
+    <div style="width: 50vmin; height: 50vmin; margin: auto; padding: 50px; border-radius: 50%; display: flex; border: solid 10px #a3ddfb">
+        <div style="margin: auto; text-align: center">
+            <h2>LOADING</h2>
+            <p>加载过慢请开启缓存，浏览器默认开启</p>
+            <img src="/images/loading.gif" style="height: 50px; border-radius: 0">
+        </div>
+    </div>
+</div>
+
+        <div id="layout">
+            <transition name="into">
+            <div id="main" v-show="showpage" style="display: -not-none">
+                <nav id="menu">
+    <div class="desktop-menu">
+        <a class="title" href="/">
+            <span>ZFMX&#39;S BLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div :class="&quot;phone-menu &quot; + menushow" id="phone-menu">
+        <div class="curtain" @click="menushow = !menushow" v-show="menushow"></div>
+        <div class="title" @click="menushow = !menushow">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZFMX&#39;S BLOG</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menushow">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+
+                <div class="article">
+    <div>
+        <h1>nisp一级复习：第二章 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/2/26
+        </span>
+        
+        <span class="category">
+            <a href="/categories/nisp%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                nisp复习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/nisp/" style="color: #ffa2c4">nisp</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p><strong>密码学基础</strong></p>
+<p><strong>身份鉴别与访问控制</strong></p>
+<p><strong>网络安全协议</strong></p>
+<p><strong>网络安全新技术</strong></p>
+<span id="more"></span>
+
+<h2 id="一、密码学基础"><a href="#一、密码学基础" class="headerlink" title="一、密码学基础"></a>一、密码学基础</h2><table>
+<thead>
+<tr>
+<th>信息安全要素</th>
+<th>典型威胁</th>
+<th>可用密码技术</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>机密性</td>
+<td>窃听、非法盗取资料、泄露数据</td>
+<td>对称加密和非对称加密，数字信封</td>
+</tr>
+<tr>
+<td>完整性</td>
+<td>纂改、重放、破坏</td>
+<td>哈希函数和消息认证码数据，加密数字签名</td>
+</tr>
+<tr>
+<td>可鉴别性</td>
+<td>冒名</td>
+<td>口令和数字密码，数字证书和签名</td>
+</tr>
+<tr>
+<td>不可否认性</td>
+<td>否认已收已发送的信息</td>
+<td>数字签名，数据储存</td>
+</tr>
+<tr>
+<td>授权与访问控制</td>
+<td>非法存储资料，越权访问</td>
+<td>属性证书，访问控制</td>
+</tr>
+</tbody></table>
+<h4 id="密码系统安全性"><a href="#密码系统安全性" class="headerlink" title="密码系统安全性"></a>密码系统安全性</h4><ul>
+<li>影响安全性的基本因素（密码算法的复杂度，密钥机密性，密钥长度）</li>
+<li>遵循柯克霍夫原则：密码体制可以对外公开，对密钥必须保密，一个密码系统需要保密的越多，可能的弱点就越多</li>
+<li>需要达到以下准则<ul>
+<li>实际计算量无法实现</li>
+<li>所需计算时间超过信息的生命周期</li>
+<li>费用超过信息本身价值</li>
+</ul>
+</li>
+</ul>
+<h4 id="对称密码算法"><a href="#对称密码算法" class="headerlink" title="对称密码算法"></a>对称密码算法</h4><ul>
+<li><p>也称传统密码算法、秘密密钥算法、单密钥算法</p>
+</li>
+<li><p>加密密钥和解密密钥相同或实质等同</p>
+</li>
+<li><p>优点：算法简单、计算量小、加密速度快、加密效率高</p>
+</li>
+<li><p>缺点：安全信道难以实现、安全交换密钥问题和密钥管理复杂、无法解决对消息的纂改和否认</p>
+<p>DES,3DES,IDEA,AES,RC4,RC5,Twofish,CAST-256,MARS等算法</p>
+<h4 id="非对称密码算法"><a href="#非对称密码算法" class="headerlink" title="非对称密码算法"></a>非对称密码算法</h4></li>
+<li><p>也称双钥或公钥密码算法</p>
+</li>
+<li><p>其加密密钥和解密密钥不同</p>
+</li>
+<li><p>特点：成对出现 公钥加密私钥解密(机密性)，私钥加密公钥解密(数字签名)</p>
+</li>
+</ul>
+<p>​       Merkle-Hellman,RSA,Rabin,EIGamal,ECC算法</p>
+<h4 id="哈希函数和数字签名"><a href="#哈希函数和数字签名" class="headerlink" title="哈希函数和数字签名"></a>哈希函数和数字签名</h4><ul>
+<li>哈希函数：也称单向散列函数，可以将任意的有限长度信息映射为同等长度的值，主要用来检测消息的完整性和数字签名<ul>
+<li>单向性：无法还原</li>
+<li>弱抗碰撞性：不会生成相同的哈希值</li>
+<li>强抗碰撞性：无法通过计算得到相同的哈希值</li>
+<li>应用：<ul>
+<li>MD5算法：输入任意长的消息，输出128bit的摘要</li>
+<li>SHA-1算法：输入小于2的64次方长度的消息，输出160位散列值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数字签名</li>
+<li>公钥基础设施（PKI架构）<ul>
+<li>终端实体——RA——CA——证书</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、身份鉴别与访问控制"><a href="#二、身份鉴别与访问控制" class="headerlink" title="二、身份鉴别与访问控制"></a>二、身份鉴别与访问控制</h2><h4 id="身份鉴别"><a href="#身份鉴别" class="headerlink" title="身份鉴别"></a>身份鉴别</h4><ul>
+<li>实体所知：如PIN码、口令<ul>
+<li>信息泄露：登入密码猜测，线路窃听</li>
+<li>信息伪造：重放攻击</li>
+<li>窃听攻击——加密——彩虹表攻击——口令使用随机数</li>
+<li>重放攻击——引入时间戳、使用一次性口令、引入随机数</li>
+</ul>
+</li>
+<li>实体所有：如钥匙、磁卡、智能IC卡</li>
+<li>实体特征：验证实体不可改变的特性，如生物特征<ul>
+<li>鉴别系统的有效性判断：错误拒绝率(FRR)、错误接受率(FAR)、交叉错误率(CER）</li>
+</ul>
+</li>
+</ul>
+<h4 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h4><ul>
+<li>保证用户在系统安全策略下正常工作</li>
+<li>拒绝非法用户的非授权访问请求</li>
+<li>拒绝合法用户的越权服务请求</li>
+</ul>
+<p><strong>自主访问控制(DAC):</strong></p>
+<p>​		安全性较低，主体权限易被改变，不能抵御特洛伊木马</p>
+<p>​		一般使用访问控制列表，其他有访问控制矩阵、访问能力表等方式</p>
+<p><strong>强制访问控制(MAC):</strong></p>
+<p>​		安全性强，主体权限不会被改变</p>
+<p><strong>基本模型：</strong></p>
+<p>​		BLP模型，Biba模型，Clark-Wilson模型，Chinese Wall模型（也称长城模型）</p>
+<h2 id="三、网络安全协议"><a href="#三、网络安全协议" class="headerlink" title="三、网络安全协议"></a>三、网络安全协议</h2><h4 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h4><ul>
+<li>底层协议：下四层，处理实际的信息传输</li>
+<li>高层协议：上三层，处理用户服务和各种应用请求</li>
+</ul>
+<h4 id="TCP-x2F-IP体系结构"><a href="#TCP-x2F-IP体系结构" class="headerlink" title="TCP&#x2F;IP体系结构"></a>TCP&#x2F;IP体系结构</h4><table>
+<thead>
+<tr>
+<th>应用层</th>
+<th>用户协议</th>
+<th>用户协议</th>
+<th>用户协议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>传输层</td>
+<td>TCP协议</td>
+<td></td>
+<td>UDP协议</td>
+</tr>
+<tr>
+<td>互联网络层</td>
+<td>ICMP协议</td>
+<td>IP协议</td>
+<td>IGMP协议</td>
+</tr>
+<tr>
+<td>网络接口层</td>
+<td>ARP协议</td>
+<td>硬件接口</td>
+<td>RARP协议</td>
+</tr>
+</tbody></table>
+<h4 id="链路层安全风险："><a href="#链路层安全风险：" class="headerlink" title="链路层安全风险："></a>链路层安全风险：</h4><ul>
+<li>损坏</li>
+<li>干扰：大功率电器，电源线路，电磁辐射</li>
+<li>电磁泄漏：传输线路电磁泄漏</li>
+<li>欺骗：ARP欺骗</li>
+<li>嗅探：常见二层协议是明文通信</li>
+<li>拒绝服务：mac flood ,arp flood等</li>
+</ul>
+<h4 id="网络层安全风险："><a href="#网络层安全风险：" class="headerlink" title="网络层安全风险："></a>网络层安全风险：</h4><ul>
+<li>电子欺骗<ul>
+<li>IP地址欺骗攻击</li>
+<li>源路由欺骗</li>
+</ul>
+</li>
+<li>拒绝服务<ul>
+<li>碎片攻击：通过无法重组包导致系统无法访问</li>
+<li>死亡之ping：使用工具合成信息超过65535的ping导致系统无法解释</li>
+</ul>
+</li>
+</ul>
+<h4 id="传输层安全风险："><a href="#传输层安全风险：" class="headerlink" title="传输层安全风险："></a>传输层安全风险：</h4><ul>
+<li>TCP：SYN flood攻击	第三次握手无法实现导致漏洞发生</li>
+<li>UDP：UDP flood攻击</li>
+</ul>
+<h4 id="TCP-x2F-IP安全架构"><a href="#TCP-x2F-IP安全架构" class="headerlink" title="TCP&#x2F;IP安全架构"></a>TCP&#x2F;IP安全架构</h4><table>
+<thead>
+<tr>
+<th>应用层</th>
+<th>SNMP</th>
+<th>PGP S&#x2F;MIME PEM（E-Email）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><strong>SET IKE SSH S-HTTP SFTP X.509</strong></td>
+<td><strong>DNS安全扩展</strong></td>
+</tr>
+<tr>
+<td><strong>传输层</strong></td>
+<td>**SSL TLS **</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>TCP</strong></td>
+<td><strong>UDP</strong></td>
+</tr>
+<tr>
+<td><strong>网络层</strong></td>
+<td><strong>IPSEC(AH)</strong></td>
+<td><strong>IPSEC(ESP)</strong></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>IP</strong></td>
+<td><strong>IP</strong></td>
+</tr>
+<tr>
+<td><strong>链路层</strong></td>
+<td><strong>PPTP L2TP</strong></td>
+<td><strong>PPP L2F</strong></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>服务驱动与接入协议</strong></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="四、网络安全新技术（云大物移工）"><a href="#四、网络安全新技术（云大物移工）" class="headerlink" title="四、网络安全新技术（云大物移工）"></a>四、网络安全新技术（云大物移工）</h2><h4 id="云计算"><a href="#云计算" class="headerlink" title="云计算"></a>云计算</h4><ol>
+<li>SaaS 软件级服务</li>
+<li>PaaS 平台级服务</li>
+<li>IaaS 基础设施服务</li>
+</ol>
+<p>安全威胁：</p>
+<ul>
+<li>安全认证<ul>
+<li>中间人攻击</li>
+<li>重放攻击</li>
+<li>僵尸攻击</li>
+<li>拒绝服务攻击</li>
+<li>身份伪造</li>
+</ul>
+</li>
+<li>虚拟化安全<ul>
+<li>漏洞攻击<ul>
+<li>VMware漏洞</li>
+<li>HyperVM 0day漏洞</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DOS&amp;DDOS攻击</li>
+<li>land,teardrop,SYN flood,UDP flood,ICMP flood,Smurf</li>
+</ul>
+<h4 id="大数据安全威胁："><a href="#大数据安全威胁：" class="headerlink" title="大数据安全威胁："></a>大数据安全威胁：</h4><ul>
+<li>破坏数据完整性</li>
+<li>网络传播病毒</li>
+<li>拒绝服务攻击</li>
+<li>非授权访问</li>
+<li>信息泄露或丢失</li>
+<li>大数据成为攻击目标，大数据滥用风险，大数据误用风险</li>
+</ul>
+<h4 id="移动互联网安全威胁："><a href="#移动互联网安全威胁：" class="headerlink" title="移动互联网安全威胁："></a>移动互联网安全威胁：</h4><ul>
+<li>业务层面：非法访问用户，非法访问数据</li>
+<li>网络层面：非法窃听，用户身份仿冒</li>
+<li>终端层面：漏洞木马蠕虫，网络钓鱼，DDOS</li>
+</ul>
+<h4 id="物联网安全威胁："><a href="#物联网安全威胁：" class="headerlink" title="物联网安全威胁："></a>物联网安全威胁：</h4><ul>
+<li>感知层：网关节点&#x2F;普通节点被控制，DDOS</li>
+<li>传输层：信息的机密性方面，AKA机制防御</li>
+<li>处理层：入侵检测</li>
+<li>应用层：访问控制</li>
+</ul>
+<h4 id="工业互联网安全："><a href="#工业互联网安全：" class="headerlink" title="工业互联网安全："></a>工业互联网安全：</h4><p><strong>“震网”事件</strong>：利用MS10-046,西门子SIMATIC WinCC 的0day漏洞通过U盘实施</p>
+<ul>
+<li>高级持续性威胁</li>
+<li>工业网络病毒</li>
+<li>国外设备预留后门</li>
+<li>工控转移高危漏洞</li>
+<li>无线技术应用风险</li>
+</ul>
+<p>​		</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 zfmx&#39;s Blog
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zfmx
+        </div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+
+            </div>
+            </transition>
+            <div id="showimg">
+                <img id="showimg-content">
+            </div>
+        </div>
+        <script src="/js/functions.js"></script>
+<script src="/js/particlex.js"></script>
+
+
+
+
+
+
+
+    </body>
+</html>
