@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>nisp一级复习：第三章 | zfmx&#39;s Blog</title>
+        <meta name="author" content="zfmx">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <link rel="icon" href="/images/1.jpg">
+        <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.2.1/css/all.min.css">
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        
+        
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height: 100vh; width: 100vw; left: 0; top: 0; position: fixed; display: flex; z-index: 2147483647; background: #fff; transition: opacity 0.3s ease-out; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; pointer-events: none">
+    <div style="width: 50vmin; height: 50vmin; margin: auto; padding: 50px; border-radius: 50%; display: flex; border: solid 10px #a3ddfb">
+        <div style="margin: auto; text-align: center">
+            <h2>LOADING</h2>
+            <p>加载过慢请开启缓存，浏览器默认开启</p>
+            <img src="/images/loading.gif" style="height: 50px; border-radius: 0">
+        </div>
+    </div>
+</div>
+
+        <div id="layout">
+            <transition name="into">
+            <div id="main" v-show="showpage" style="display: -not-none">
+                <nav id="menu">
+    <div class="desktop-menu">
+        <a class="title" href="/">
+            <span>ZFMX&#39;S BLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div :class="&quot;phone-menu &quot; + menushow" id="phone-menu">
+        <div class="curtain" @click="menushow = !menushow" v-show="menushow"></div>
+        <div class="title" @click="menushow = !menushow">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZFMX&#39;S BLOG</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menushow">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+
+                <div class="article">
+    <div>
+        <h1>nisp一级复习：第三章 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/2/28
+        </span>
+        
+        <span class="category">
+            <a href="/categories/nisp%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                nisp复习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/nisp/" style="color: #03a9f4">nisp</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p> <strong>计算机网络和网络设备</strong></p>
+<p><strong>防火墙</strong></p>
+<p><strong>边界安全防护设备</strong></p>
+<p><strong>网络安全管理设备</strong></p>
+<span id="more"></span>
+
+<h2 id="一、计算机网络和网络设备"><a href="#一、计算机网络和网络设备" class="headerlink" title="一、计算机网络和网络设备"></a>一、计算机网络和网络设备</h2><h4 id="计算机网络基础"><a href="#计算机网络基础" class="headerlink" title="计算机网络基础"></a>计算机网络基础</h4><ul>
+<li>阿帕网（ARPAnet）</li>
+<li>TCP&#x2F;IP模型</li>
+<li>开放互动连接模型（OSI七层模型）</li>
+</ul>
+<p>分类：覆盖范围：广域网、城域网、局域网</p>
+<p>​			用户类型：公众网、专用网</p>
+<h4 id="计算机网络结构"><a href="#计算机网络结构" class="headerlink" title="计算机网络结构"></a>计算机网络结构</h4><ul>
+<li>网络单元：用以连接计算机网络的节点</li>
+<li>链路：物理连接网络单元的介质</li>
+</ul>
+<p>拓扑结构：总线型拓扑、星型拓扑（最常用的多节点转中央节点）、环形拓扑、树形拓扑、网状拓扑、混合型拓扑</p>
+<h4 id="无线局域网安全防护"><a href="#无线局域网安全防护" class="headerlink" title="无线局域网安全防护"></a>无线局域网安全防护</h4><ul>
+<li>安全管理<ul>
+<li>结合机构业务需求对万县局域网的应用进行评估，指定使用的管理策略</li>
+<li>限制无线局域网的使用规范，例如仅用于互联网资料的查询和日常办公使用</li>
+<li>明确定义并限制无线局域网的使用范围，尽量不在无线网络中汆熟褐处理机密文件</li>
+</ul>
+</li>
+<li>安全技术<ul>
+<li>位访客设立独立的接入网段，并在无线局域网于业务网之间部署隔离设备</li>
+<li>对无线局域网接入使用安全可靠的认证和加密技术，增强认证技术</li>
+<li>部署乳清检测系统以发现可能的攻击并定期执行安全审查</li>
+</ul>
+</li>
+</ul>
+<h4 id="常见的网络设备"><a href="#常见的网络设备" class="headerlink" title="常见的网络设备"></a>常见的网络设备</h4><ul>
+<li>网卡（NIC）：有一个独一无二的48位串行号，被写在网卡上的一块ROM中，称为物理地址MAC地址，工作在第二层，MAC地址全球唯一</li>
+<li>中继器：调整复制放大信号，物理层</li>
+<li>集线器：HUB，与中继器原理相同</li>
+<li>网桥：桥接器，大网段分割成小网段或者使小网段连接</li>
+<li>交换机：接入层汇聚层核心层</li>
+<li>冲突域：数据必然发送到的区域，交换机隔离</li>
+<li>广播域：广播数据时可以发送到的区域，路由器隔离</li>
+</ul>
+<h2 id="二、防火墙"><a href="#二、防火墙" class="headerlink" title="二、防火墙"></a>二、防火墙</h2><h4 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h4><p>​		通过数据包的刷选和屏蔽，可以防止非法的访问进入内部或是外部计算机网络</p>
+<h4 id="防火墙的部署位置"><a href="#防火墙的部署位置" class="headerlink" title="防火墙的部署位置"></a>防火墙的部署位置</h4><ul>
+<li>可信网络与不可信网络之间</li>
+<li>不同安全级别网络之间</li>
+<li>两个需要隔离的区域之间</li>
+</ul>
+<h4 id="技术原理"><a href="#技术原理" class="headerlink" title="技术原理"></a>技术原理</h4><ul>
+<li>定义一个必经之点</li>
+<li>挡住未经授权的访问流量</li>
+<li>禁止具有脆弱性的服务带来危害</li>
+<li>实施保护，以避免各种IP欺骗和路由攻击</li>
+</ul>
+<h4 id="策略："><a href="#策略：" class="headerlink" title="策略："></a>策略：</h4><ul>
+<li>接受：允许通过</li>
+<li>拒绝：拒绝信息通过，通知发送信息的信息源</li>
+<li>丢弃：直接丢弃信息，不通知发送信息的信息源</li>
+</ul>
+<h4 id="典型技术："><a href="#典型技术：" class="headerlink" title="典型技术："></a>典型技术：</h4><ul>
+<li>静态包过滤防火墙<ul>
+<li>依据数据包的基本标记来控制数据包</li>
+<li>优点：技术逻辑简单，易于实现，处理速度快，过滤规则与应用层无关</li>
+<li>不足：无法实现对应用层的过滤，不能防止地址欺骗，不能防止外部客户与内部主机直接连接，安全性差</li>
+</ul>
+</li>
+<li>应用代理防火墙<ul>
+<li>网络之间的连接都要通过防火墙进行转发，不允许绘画双方直接通过，需用防火墙作为代理，将外网数据转发给内网主机设备</li>
+<li>优点：提供NAT，避免内外网直连，可以隐藏内部网络结构</li>
+<li>不足：系统性能消耗极大，效率略低，需要为每个服务写代理程序</li>
+</ul>
+</li>
+<li>状态检测防火墙<ul>
+<li>动态包过滤防火墙，创建状态表用于维护连接</li>
+<li>优点：安全性高，能记录每个包的信息</li>
+<li>不足：检测内柔的包过滤多，对性能要求高</li>
+</ul>
+</li>
+</ul>
+<h4 id="企业部署"><a href="#企业部署" class="headerlink" title="企业部署"></a>企业部署</h4><p>单防火墙（无DMZ)	单防火墙（DMZ） 双防火墙</p>
+<h4 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h4><ul>
+<li>难于管理和配置，易造成安全漏洞</li>
+<li>防外不防内</li>
+<li>只实现粗粒度的访问控制</li>
+<li>不能防范病毒和某些网络攻击</li>
+</ul>
+<h2 id="三、边界安全防护设备"><a href="#三、边界安全防护设备" class="headerlink" title="三、边界安全防护设备"></a>三、边界安全防护设备</h2><h4 id="IPS（入侵防御系统）"><a href="#IPS（入侵防御系统）" class="headerlink" title="IPS（入侵防御系统）"></a>IPS（入侵防御系统）</h4><p>​		结合入侵检测、防火墙等基础机制的安全产品，通过对网络设置进行分析入侵检测并产生响应中断入侵，但会产生误判拦截用户的正常操作行为</p>
+<h4 id="网闸（物理隔离系统）"><a href="#网闸（物理隔离系统）" class="headerlink" title="网闸（物理隔离系统）"></a>网闸（物理隔离系统）</h4><p>​		组成：外部处理单元、内部处理单元、仲裁处理单元</p>
+<h4 id="上网行为管理"><a href="#上网行为管理" class="headerlink" title="上网行为管理"></a>上网行为管理</h4><p>​		对内部网络用户的互联网行为进行控制和管理的边界网络安全产品，记录个人的上网数据</p>
+<h4 id="防病毒网关"><a href="#防病毒网关" class="headerlink" title="防病毒网关"></a>防病毒网关</h4><p>​		终端上部署的，对进入终端的恶意代码进行检测和查杀</p>
+<h4 id="UTM（统一威胁管理系统）"><a href="#UTM（统一威胁管理系统）" class="headerlink" title="UTM（统一威胁管理系统）"></a>UTM（统一威胁管理系统）</h4><p>​		集成各种边界安全防护设备</p>
+<h2 id="四、网络安全管理设备"><a href="#四、网络安全管理设备" class="headerlink" title="四、网络安全管理设备"></a>四、网络安全管理设备</h2><h4 id="IDS（入侵检测系统）"><a href="#IDS（入侵检测系统）" class="headerlink" title="IDS（入侵检测系统）"></a>IDS（入侵检测系统）</h4><p>​		对入侵行为进行检测并进行响应的网络安全设备（监听包进行检测），是一种主动防御设备</p>
+<p>​		类型有网络入侵检测（NIDS）和主机入侵检测（HIDS）</p>
+<h4 id="网络安全审计"><a href="#网络安全审计" class="headerlink" title="网络安全审计"></a>网络安全审计</h4><h4 id="漏洞扫描系统"><a href="#漏洞扫描系统" class="headerlink" title="漏洞扫描系统"></a>漏洞扫描系统</h4><h4 id="VPN（虚拟专网）"><a href="#VPN（虚拟专网）" class="headerlink" title="VPN（虚拟专网）"></a>VPN（虚拟专网）</h4><p>​		在网络中建立一个虚拟的临时的专用的安全网络通道</p>
+<p>​		<strong>VPN技术：</strong></p>
+<ul>
+<li>隧道技术<ul>
+<li>PPTP、L2TP</li>
+<li>IPSEC、GRE</li>
+<li>SSL、TLS</li>
+</ul>
+</li>
+<li>密码技术<ul>
+<li>对称密码技术</li>
+<li>非对称密码技术</li>
+</ul>
+</li>
+</ul>
+<h4 id="堡垒主机"><a href="#堡垒主机" class="headerlink" title="堡垒主机"></a>堡垒主机</h4><h4 id="安全管理平台-SOC"><a href="#安全管理平台-SOC" class="headerlink" title="安全管理平台 SOC"></a>安全管理平台 SOC</h4><p>​		为组织机构提供集中、统一、可视化的安全信息部署</p>
+<p>常见功能：</p>
+<ul>
+<li>统一日志管理（集中监控）</li>
+<li>统一配置管理（集中管理）</li>
+<li>各安全产品和系统的统一协调和处理（协同处理）</li>
+<li>安全状态的统一管理（统一安全保护）</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 zfmx&#39;s Blog
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zfmx
+        </div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+
+            </div>
+            </transition>
+            <div id="showimg">
+                <img id="showimg-content">
+            </div>
+        </div>
+        <script src="/js/functions.js"></script>
+<script src="/js/particlex.js"></script>
+
+
+
+
+
+
+
+    </body>
+</html>
